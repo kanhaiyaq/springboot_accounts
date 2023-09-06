@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  
+ accounts:
+   image: kanhaiyaq/accounts:latest
+   mem_limit: 700m
+   ports:
+     - "8080:8080"
+   networks:
+     - kanhaiyaq-network   
+     
+ loans:
+   image: kanhaiyaq/loans:latest
+   mem_limit: 700m
+   ports:
+      - "8090:8090"
+   networks:
+      - kanhaiyaq-network 
+      
+ cards:
+   image: kanhaiyaq/cards:latest
+   mem_limit: 700m
+   ports:
+      - "9000:9000"
+   networks:
+      - kanhaiyaq-network 
+      
+networks:
+  kanhaiyaq-network:
